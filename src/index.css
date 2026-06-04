@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #f3f4f6; /* Desk background */
+    color: #1f2937;
+    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Notebook bindings and pages */
+  .notebook-container {
+    background: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    position: relative;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* Red Margin Line on the left */
+  .notebook-page-margin {
+    position: relative;
+  }
+  .notebook-page-margin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 3rem; /* 48px from left */
+    width: 2px;
+    background-color: rgba(248, 113, 113, 0.4); /* soft red margin line */
+    pointer-events: none;
+  }
+
+  /* Mathematical Graph Grid */
+  .notebook-grid-bg {
+    background-image: 
+      linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: #fdfdfa;
+    border: 2px solid #374151; /* bold charcoal border */
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px 0px #1f2937;
+  }
+
+  .notebook-card {
+    background-color: #ffffff;
+    border: 2px solid #1f2937;
+    box-shadow: 3px 3px 0px 0px #1f2937;
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .notebook-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px 0px #1f2937;
+  }
+
+  .notebook-btn {
+    border: 2px solid #1f2937;
+    box-shadow: 2px 2px 0px 0px #1f2937;
+    border-radius: 6px;
+    transition: all 0.1s ease;
+    font-weight: 500;
+  }
+
+  .notebook-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px 0px #1f2937;
+  }
+
+  .notebook-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px 0px #1f2937;
+  }
+
+  /* Handwriting styles */
+  .handwritten {
+    font-family: 'Architects Daughter', 'Caveat', cursive;
+  }
+}
+
+/* Notebook Binding Spiral Rings */
+.spiral-ring {
+  background: linear-gradient(90deg, #d1d5db 0%, #9ca3af 50%, #d1d5db 100%);
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.6), 1px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom styles for highlighter overlay */
+.highlighter-highlight {
+  background: linear-gradient(104deg, rgba(250, 204, 21, 0.25) 0.9%, rgba(250, 204, 21, 0.15) 2.4%, rgba(250, 204, 21, 0.3) 5.8%, rgba(250, 204, 21, 0.1) 93%, rgba(250, 204, 21, 0.2) 96%, rgba(250, 204, 21, 0.25) 98%);
+  padding: 0.1em 0.3em;
+  border-radius: 0.4em 0.1em 0.3em 0.1em;
+}
+
+/* Highlight blue pen line styles */
+.blue-pen-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
